@@ -27,8 +27,6 @@
 #' #Simulate data
 #' obs <- simulPareto(100, loc, vario)
 #' @export
-
-
 simulPareto <- function(n, loc, vario, nCores = 1, cl = NULL){
 
   if(!inherits(loc, "data.frame")) {

@@ -3,7 +3,7 @@
 #include <R_ext/Rdynload.h>
 #include <Rmath.h>
 #include <vector>
-#include <complex>
+#include <R_ext/Complex.h>
 #include <limits>
 
 
@@ -12,7 +12,7 @@ static void chkIntFn(void *dummy) {
   R_CheckUserInterrupt();
 }
 
-// this will call the above in a top-level context so it won't longjmp-out of your context
+// this will call the above in a top-level context so it won't long jump-out of your context
 bool checkInterrupt() {
   return (R_ToplevelExec(chkIntFn, NULL) == FALSE);
 }
